@@ -1,0 +1,36 @@
+/*You have been given an integer array/list(ARR) and a number X. Find and return the total number of pairs
+in the array/list which sum to X.*/
+
+#include<iostream>
+using namespace std;
+
+int counttwo(int arr[],int n,int x){
+	int count=0;
+	for(int i=0;i<n;i++){
+		for(int j=i+1;j<n;j++){
+			int sum=arr[i]+arr[j];
+			if(sum==x){
+				count++;
+			}
+		}
+	}
+	return count;
+}
+
+int main(){
+	int arr[100],n,x;
+	cout<<"Enter the size of the array"<<endl;
+	cin>>n;
+	
+	cout<<"Enter the values in an array"<<endl;
+	for(int i=0;i<n;i++){
+		cin>>arr[i];
+	}
+	
+	cout<<"Enter the number equal to sum"<<endl;
+	cin>>x;
+	int pair=counttwo(arr,n,x);
+	cout<<pair;
+
+
+}

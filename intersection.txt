@@ -1,0 +1,38 @@
+/*You have been given two integer arrays/list(ARR1 and ARR2) of size M and N, respectively.
+You need to print their intersection; An intersection for this problem can be defined when both the arrays/lists
+contain a particular value or to put it in other words, when there is a common value that exists in both the arrays/lists.*/
+
+#include<iostream>
+using namespace std;
+
+void printintersection(int arr[],int arr1[],int m,int n){
+	for(int i=0;i<m;i++){
+		for(int j=0;j<n;j++){
+			if(arr[i]==arr1[j]){
+				cout<<arr[i]<<" ";
+				arr1[j]=INT_MIN;
+				break;
+			}
+		}
+	}
+}
+
+int main(){
+	int arr[100],arr1[100],m,n;
+	cout<<"Enter the size of the array"<<endl;
+	cin>>m>>n;;
+
+	cout<<"Enter the values in first array"<<endl;
+	for(int i=0;i<m;i++){
+		cin>>arr[i];
+	}
+
+	cout<<"Enter the values in second array"<<endl;
+	for(int i=0;i<n;i++){
+		cin>>arr1[i];
+	}
+
+	printintersection(arr,arr1,m,n);
+
+
+}

@@ -1,0 +1,42 @@
+/*You have been given an integer array/list(ARR) of size N that contains only integers,
+0 and 1. Write a function to sort this array/list. Think of a solution which scans the array/list
+only once and don't require use of an extra array/list.*/
+
+#include<iostream>
+using namespace std;
+
+void sort(int arr[],int n){
+	int i=0;
+	int j=n-1;
+	while(i<j){
+		if(arr[i]==0){
+			i++;
+		}
+		else if(arr[j]==1){
+			j--;
+		}
+		else{
+			int temp=arr[j];
+			arr[j]=arr[i];
+			arr[i]=temp;
+			i++;
+			j--;
+		}
+	}
+}
+
+int main(){
+	int arr[100],n;
+	cout<<"Enter the size of the array"<<endl;
+	cin>>n;
+	
+	cout<<"Enter the values in an array"<<endl;
+	for(int i=0;i<n;i++){
+		cin>>arr[i];
+	}
+	
+	sort(arr,n);
+	for(int i=0;i<n;i++){
+		cout<<arr[i];
+	}
+}
